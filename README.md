@@ -15,3 +15,6 @@ npm run build
 ```
 npm run serve
 ```
+
+
+And double click on canvas
