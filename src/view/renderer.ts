@@ -20,7 +20,6 @@ export class Renderer {
     depthStencilBuffer!: GPUTexture;
     depthStencilView!: GPUTextureView;
     depthStencilAttactchment!: GPURenderPassDepthStencilAttachment;
-    // GPURenderPassDepthStencilAttachment ()
     
 
     uniformBuffer!: GPUBuffer;
@@ -44,7 +43,7 @@ export class Renderer {
 
         await this.createAssets();
 
-        await this.makeDepthBufferResources
+        await this.makeDepthBufferResources();
 
         await this.makePipeline();
     }
@@ -54,8 +53,25 @@ export class Renderer {
         this.depthStencilState = {
             format:"depth24plus-stencil8",
             depthWriteEnabled: true,
-            depthCompare: "less-equal"
+            depthCompare: "less-equal",
+            stencilFront: {
+                compare: 'always',
+                failOp: 'keep',
+                depthFailOp: 'increment-wrap',
+                passOp: 'keep'
+            },
+            stencilBack: {
+                compare: "always",
+                failOp: "keep",
+                depthFailOp: 'decrement-wrap',
+                passOp: "keep"
+            },
+
+            stencilReadMask: 0xff,
+            stencilWriteMask: 0xff
         };
+
+        
 
         const size:GPUExtent3D = {
             width: this.canvas.width,
