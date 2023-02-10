@@ -1,29 +1,30 @@
 # WebGPU-main
 
-Simple.
+This repository contains the source code for a simple WebGPU demo. WebGPU is a new graphics and computing API that provides low-level access to modern GPUs, enabling high-performance and power-efficient applications. With WebGPU, developers can leverage the full potential of modern GPUs, while still using standard web technologies such as HTML, CSS, and JavaScript.
 
-Get google chrome canary. Enable webgpu flags.
+To run this demo, you will need to use a browser that supports WebGPU. Currently, the best option is to use Google Chrome Canary, which can be downloaded from the official website.
 
-[chrome://flags/#enable-unsafe-webgpu]
+Once you have Chrome Canary installed, you will need to enable the WebGPU flags by navigating to `chrome://flags/#enable-unsafe-webgpu` and turning the flag on.
 
-```
-npm i
-```
+Next, you will need to install the required dependencies by running the following command in the terminal:
 
-```
-npm run build
-```
+cli command : `npm i`
 
-```
-npm run serve
-```
+Once the dependencies are installed, you can build the project by running:
 
-use any html server to run project.
+cli command : `npm run build`
+
+And then serve it using any HTTP server of your choice, or by running the following command:
+
+cli command : `npm run serve`
 
 
-And double click on canvas
+Finally, open the demo in your browser by double-clicking on the canvas. You can navigate the demo using the following controls:
 
-wasd - forward, left, back, right 
-w then LShift - speed up
+- `W`: Move forward
+- `A`: Move left
+- `S`: Move back
+- `D`: Move right
+- `W` + `LShift`: Speed up
 
-Thank you
+Thank you for trying out this demo! We hope it gives you a good idea of what's possible with WebGPU.
